@@ -9,3 +9,7 @@ function padLeft(val, num, str) {
 }
 
 // YOUR CODE GOES HERE
+
+// console.log(padLeft('foo', 5, '_'))
+
+module.exports = padLeft;
