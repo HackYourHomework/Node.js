@@ -6,8 +6,7 @@ const fs = require("fs");
 
 app.post("/blogs", (req, res) => {
   if (isInValid(req)) {
-    res.status(400);
-    res.send("Invalid request");
+    res.status(400).send("Invalid request");
     return;
   }
   fs.writeFileSync(`${req.body.title}.txt`, req.body.content);
@@ -16,8 +15,7 @@ app.post("/blogs", (req, res) => {
 
 app.put("/posts/:title", (req, res) => {
   if (isInValid(req)) {
-    res.status(400);
-    res.send("This post does not exist!");
+    res.status(400).send("This post does not exist!");
     return;
   }
   if (fs.existsSync(`${req.body.title}.txt`)) {
@@ -31,8 +29,7 @@ app.delete("/posts/:title", (req, res) => {
     fs.unlinkSync(`${req.params.title}.txt`);
     res.end("ok");
   } else {
-    res.status(400);
-    res.send("This post does not exist!");
+    res.status(400).send("This post does not exist!");
     return;
   }
 });
@@ -42,8 +39,7 @@ app.get("/posts/:title", (req, res) => {
     const post = fs.readFileSync(req.params.title);
     res.send(post);
   } else {
-    res.status(400);
-    res.send("This post does not exist!");
+    res.status(400).send("This post does not exist!");
     return;
   }
 });
