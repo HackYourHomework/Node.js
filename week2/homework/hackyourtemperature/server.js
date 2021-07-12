@@ -10,7 +10,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.post("/weather", (req, res) => {
   const cityName = req.body.cityName;
-  console.log(cityName);
   if (typeof cityName === "undefined" || cityName === "") {
     res.status(400);
     res.send("Invalid request, please enter a city name!");
