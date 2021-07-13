@@ -1,0 +1,20 @@
+<form id="form" action="/weather" method="POST" class="row gy-2 gx-3 align-items-center p-5">
+  <div class="col-6">
+    <label for="city">City:</label>
+    <input type="text" class="form-control" name="cityName" id="cityName">
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+
+<script>
+  document.getElementById('form').addEventListener('submit',(e)=>{
+    const cityInput=document.getElementById('cityName')
+    if(cityInput.value.length<1){
+      console.log('error')
+    e.preventDefault()
+    cityInput.placeholder="type city name please"
+    }
+  })
+</script>
