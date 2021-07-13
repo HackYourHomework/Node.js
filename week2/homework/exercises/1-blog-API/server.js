@@ -15,12 +15,14 @@ app.post("/blogs", (req, res) => {
 
 app.put("/posts/:title", (req, res) => {
   if (isInValid(req)) {
-    res.status(400).send("This post does not exist!");
+    res.status(400).send("Invalid request");
     return;
   }
   if (fs.existsSync(`${req.body.title}.txt`)) {
     fs.writeFileSync(`${req.body.title}.txt`, req.body.content);
     res.end("ok");
+  } else {
+    res.status(404).send("Not found");
   }
 });
 
@@ -29,7 +31,7 @@ app.delete("/posts/:title", (req, res) => {
     fs.unlinkSync(`${req.params.title}.txt`);
     res.end("ok");
   } else {
-    res.status(400).send("This post does not exist!");
+    res.status(404).send("Not found");
     return;
   }
 });
@@ -39,7 +41,7 @@ app.get("/posts/:title", (req, res) => {
     const post = fs.readFileSync(req.params.title);
     res.send(post);
   } else {
-    res.status(400).send("This post does not exist!");
+    res.status(404).send("Not found");
     return;
   }
 });
@@ -49,12 +51,9 @@ app.get("/blogs", (req, res) => {
   const blogs = [];
   fs.readdirSync(appFolder).forEach((fileName) => {
     if (path.extname(fileName) == ".txt") {
-      posts = [
-        {
-          title: `${path.parse(fileName).name}`,
-        },
-      ];
-      blogs.push(posts);
+      blogs.push({
+        title: path.parse(fileName).name,
+      });
     }
   });
   res.send(blogs);
