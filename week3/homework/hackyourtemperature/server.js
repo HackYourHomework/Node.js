@@ -22,7 +22,7 @@ app.post("/weather", async (req, res) => {
     );
     const data = await response.json();
     const temp = data.main.temp;
-    res.render("index", { weatherText: `${cityName}: ${temp}` });
+    res.render("index", { weatherText: `${cityName}: ${temp}°C` });
   } catch (error) {
     console.log(error);
   }
