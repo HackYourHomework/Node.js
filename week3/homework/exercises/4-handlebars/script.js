@@ -39,12 +39,12 @@ const getRandomElement = (array) => {
   return randomElement;
 };
 
-const drawCard = (subjects, punchlines) => {
+const drawCard = (subjectsArray, punchlinesArray) => {
   const cardData = {
-    subject: getRandomElement(subjects),
-    punchline: getRandomElement(punchlines),
+    subject: getRandomElement(subjectsArray),
+    punchline: getRandomElement(punchlinesArray),
   };
-  const card = `${cardData.subject} is great to ${cardData.punchline}`;
+  const card = `{{subject}} is great to {{punchline}}`;
   const compiledTemplate = Handlebars.compile(card);
   console.log(compiledTemplate(cardData));
 };
