@@ -9,19 +9,29 @@
  * Hints:
  * - Check the handlebars npm page for examples and documentation
  */
-
+const Handlebars = require('handlebars');
 
 function drawCard() {
   // YOUR CODE GOES IN HERE
+  const cardData = {
+    subject: getRandomElement(subjects),
+    punchline: getRandomElement(punchlines)
+  }
+  const card = `{{subject}} is great to {{punchline}}`;
+ const compiledCard = Handlebars.compile(card);
+  const phrase =  compiledCard(cardData);
+  console.log(phrase);  
 }
 
-drawCard();
+
 
 /**
  * Given an array, return an element from it chosen at random
  */
 function getRandomElement(array) {
   // YOUR CODE GOES IN HERE
+  randomIndex = Math.floor(Math.random() * array.length);
+  return array[randomIndex];
 }
 
 const subjects = [
@@ -43,3 +53,5 @@ const punchlines = [
   'achieve world piece',
   'help people learn programing',
 ];
+
+drawCard();
