@@ -1,45 +1,52 @@
-
 /**
  * 4. Fun with Handlebars
- * 
+ *
  * Write a javascript function that simulates playing the game cards against humanity.
  * The code should choose a subject and a punchline at random,
  * then replace them in a sentece using handlebars.
- * 
+ *
  * Hints:
  * - Check the handlebars npm page for examples and documentation
  */
 
+const Handlebars = require("handlebars");
 
-function drawCard() {
-  // YOUR CODE GOES IN HERE
-}
+const subjects = [
+  "shark",
+  "popcorn",
+  "poison",
+  "fork",
+  "cherry",
+  "toothbrush",
+  "cannon",
+];
 
-drawCard();
+const punchlines = [
+  "watch movie with",
+  "spread some love",
+  "put on cake",
+  "clean toilets",
+  "go to the moon",
+  "achieve world piece",
+  "help people learn programing",
+];
 
 /**
  * Given an array, return an element from it chosen at random
  */
-function getRandomElement(array) {
-  // YOUR CODE GOES IN HERE
-}
+const getRandomElement = (array) => {
+  const randomElement = array[Math.floor(Math.random() * array.length)];
+  return randomElement;
+};
 
-const subjects = [
-  'shark',
-  'popcorn',
-  'poison',
-  'fork',
-  'cherry',
-  'toothbrush',
-  'cannon',
-];
+const drawCard = (subjectsArray, punchlinesArray) => {
+  const cardData = {
+    subject: getRandomElement(subjectsArray),
+    punchline: getRandomElement(punchlinesArray),
+  };
+  const card = `{{subject}} is great to {{punchline}}`;
+  const compiledTemplate = Handlebars.compile(card);
+  console.log(compiledTemplate(cardData));
+};
 
-const punchlines = [
-  'watch movie with',
-  'spread some love',
-  'put on cake',
-  'clean toilets',
-  'go to the moon',
-  'achieve world piece',
-  'help people learn programing',
-];
+drawCard(subjects, punchlines);
