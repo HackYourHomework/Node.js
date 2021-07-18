@@ -1,0 +1,14 @@
+<form action='/weather' method='POST'>
+  <input
+    type='text'
+    name='cityName'
+    placeholder='Enter a City Name ...'
+    id='citySearch'
+  /><br />
+  <button id='searchButton'>Search</button>
+</form>
+
+<p>
+
+  {{weatherData}}
+  {{data.errMessage}}</p>
