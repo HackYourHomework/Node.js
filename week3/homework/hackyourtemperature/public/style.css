@@ -1,0 +1,46 @@
+body {
+  background-color: rgb(218, 188, 188);
+}
+
+form,
+div {
+  text-align: center;
+  padding: 20px;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+button {
+  font-size: 16px;
+  letter-spacing: 2px;
+  font-weight: 400 !important;
+  background-color: #e63946ff;
+  color: #fff;
+  padding: 23px 50px;
+  margin: auto;
+  text-align: center;
+  display: inline-block !important;
+  text-decoration: none;
+  border: 0px;
+  width: max-content;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s 0s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.04, 1);
+  background-color: rgb(216, 10, 27);
+  text-decoration: none;
+}
+
+div {
+  color: rgb(43, 179, 138);
+  font-size: 3em;
+  text-transform: uppercase;
+}
