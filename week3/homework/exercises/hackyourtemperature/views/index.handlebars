@@ -1,0 +1,15 @@
+<div class="header">
+  <h1>Check the weather in any city</h1>
+</div>
+<form id="form" action="/weather" method="POST" class="row gy-2 gx-3 align-items-center p-5">
+  <p id="not-found">{{weatherText}}</p>
+  <div class="col-3">
+    <label for="city">City:</label>
+    <input type="text" class="form-control" name="cityName" id="cityName" placeholder="Enter a City">
+    <p id="warning" class="hide">Please type a city name to continue</p>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Search</button>
+  </div>
+</form>
+<script src="/js/script.js"></script>

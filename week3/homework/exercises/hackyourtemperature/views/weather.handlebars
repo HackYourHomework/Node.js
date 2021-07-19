@@ -1,0 +1,45 @@
+<div class="wrapper">
+  <div class="widget-container">
+    <div class="top-left">
+      <h1 class="city" id="city">{{data.cityName}}, {{data.country}}</h1>
+      <h2 id="day"></h2>
+      <h3 id="date">{{data.date}}</h3>
+      <h3 id="time">{{data.time}}</h3>
+      <!--       <a target="_blank" href="https://codepen.io/myleschuahiock/"><p id="codepen-link">codepen.io/myleschuahiock</p></a> -->
+      <p class="geo"></p>
+    </div>
+    <div class="top-right">
+      <h1 id="weather-status">{{data.description}}</h1>
+      <img class="weather-icon" src={{data.iconUrl}}>
+    </div>
+    {{!-- <div class="horizontal-half-divider"></div> --}}
+    <div class="bottom-left">
+      <h1 id="temperature" class="c-temp">{{data.cTemp}}</h1>
+      <h1 id="temperature" class="f-temp" style="display: none;">{{data.fTemp}}</h1>
+      <h2 id="celsius">&degC</h2>
+      <h2 id="temp-divider">/</h2>
+      <h2 id="fahrenheit">&degF</h2>
+    </div>
+    {{!-- <div class="vertical-half-divider"></div> --}}
+    <div class="bottom-right">
+      <div class="other-details-key">
+        <p>Wind Speed</p>
+        <p>Humidity</p>
+        <p>Pressure</p>
+        <p>Sunrise Time</p>
+        <p>Sunset Time</p>
+      </div>
+      <div class="other-details-values">
+        <p class="windspeed">{{data.speed}} Km/h</p>
+        <p class="humidity">{{data.humidity}} %</p>
+        <p class="pressure">{{data.pressure}} hPa</p>
+        <p class="sunrise-time">{{data.sunriseTime}} am</p>
+        <p class="sunset-time">{{data.sunsetTime}} pm</p>
+      </div>
+    </div>
+  </div>
+  <a class="watermark-link" target="_blank" href="https://codepen.io/myleschuahiock/">
+    <p class="watermark">Designed by codepen.io/myleschuahiock</p>
+  </a>
+</div>
+<script src="/js/widgetScript.js"></script>

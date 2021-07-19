@@ -5,4 +5,19 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
+  "cSpell.ignoreWords": [
+    "a",
+    "codepen",
+    "coord",
+    "dh",
+    "fzfyq",
+    "h",
+    "lb",
+    "link",
+    "right",
+    "rta",
+    "w",
+    "yw",
+    "zn"
+  ],
 }
