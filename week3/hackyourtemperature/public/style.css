@@ -1,0 +1,37 @@
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: teal;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  width: 60vw;
+}
+
+input {
+  width: 80%;
+  border: none;
+  padding: 1rem 3rem;
+  margin: 4rem;
+  border-bottom:3px solid teal;
+  color: gray;
+  outline: none;
+  font-size: 18px;
+}
+
+button {
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: teal;
+  border: 3px solid teal;
+  cursor: pointer;
+}

@@ -1,9 +1,8 @@
 const express = require("express");
 const books = require("./books");
-
 let app = express();
-
 app.use(express.json());
+
 
 app.get   ( "/books"     , books.readAll  );
 app.get   ( "/books/:id" , books.readOne  );

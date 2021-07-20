@@ -1,0 +1,14 @@
+{
+  "name": "week2",
+  "version": "1.0.0",
+  "description": "1. [What is a CRUD application?](https://study.hackyourfuture.net/#/definitions/crud)\r 2. [What are Hypertext Transfer Protocol (HTTP) methods?](https://study.hackyourfuture.net/#/the-internet/http-methods)\r 3. [How do you design an API?](https://study.hackyourfuture.net/#/the-internet/designing-apis.md)\r   - What is Representational State Transfer (REST)?\r   - What is a RESTful API?\r 4. [Postman](https://study.hackyourfuture.net/#/tools/postman.md)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
